@@ -73,6 +73,14 @@ public:
     {
         return destination;
     }
+    int getToysLength()
+    {
+        return toysLength;
+    }
+    const ToyClass *getToys()
+    {
+        return toys;
+    }
     void afisare()
     {
         cout << endl
@@ -82,6 +90,38 @@ public:
         for (int i = 0; i < toysLength; i++)
         {
             toys[i].afisare();
+        }
+        cout << "\n\n\n\n\n\n\n\n\n\n\n";
+    }
+    void setName(const char *_name)
+    {
+        delete[] name;
+        size_t lenght_name = strlen(_name);
+        name = new char[lenght_name];
+        strcpy(name, _name);
+    };
+    void setDestination(const char *_destination)
+    {
+        delete[] destination;
+        size_t lenght_name = strlen(_destination);
+        name = new char[lenght_name];
+        strcpy(name, _destination);
+    };
+    void setPersonName(const char *_personName)
+    {
+        delete[] personName;
+        size_t lenght_name = strlen(_personName);
+        name = new char[lenght_name];
+        strcpy(name, _personName);
+    };
+    void setToys(const ToyClass *_toys, const int _toysLength)
+    {
+        delete[] toys;
+        toysLength = _toysLength;
+        toys = new ToyClass[toysLength];
+        for (int i = 0; i < toysLength; i++)
+        {
+            toys[i] = _toys[i];
         }
     }
     ~Gift()
