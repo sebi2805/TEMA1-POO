@@ -34,7 +34,6 @@ void InteractionInterface(char *&nameGift, char *&destination, char *&personName
         cout << "Introduceti varsta recomandata.\n";
         cin >> age;
         toys[j] = ToyClass(nameToy, price, weight, category, age);
-        toys[j].afisare();
-    }
+        }
 }
 #endif
