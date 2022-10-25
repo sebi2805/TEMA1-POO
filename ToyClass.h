@@ -18,7 +18,7 @@ public:
         name = new char[strlen(_name) + 1];
         strcpy(name, _name);
         category = new char[strlen(_category) + 1];
-        strcpy(name, _category);
+        strcpy(category, _category);
         price = _price;
         weight = _weight;
         age = _age;
@@ -42,6 +42,12 @@ public:
         weight = obj.weight;
         return *this;
     };
+    friend ostream &operator<<(ostream &os, const ToyClass &obj)
+    {
+        os << obj.name << obj.weight << endl
+           << endl;
+        return os;
+    };
 
     const char *getName()
     {
@@ -55,7 +61,8 @@ public:
     {
         return weight;
     }
-    void afisare()
+    const void afisare()
+        const
     {
 
         cout << "Numele jucariei este: " << name << " cu pretul de " << price << " si greutate de " << weight << endl;
