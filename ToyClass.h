@@ -9,68 +9,23 @@ class ToyClass
 private:
     char *name = new char[1], *category = new char[1];
     float price, weight, age;
+    int id;
 
 public:
-    ToyClass(const char *_name = "undefined", float _price = 0, float _weight = 0, const char *_category = "none", int _age = 3)
+    ToyClass(const char *_name = "undefined", float _price = 0, float _weight = 0, const char *_category = "none", int _age = 3, int _id = 1);
+    ToyClass(const ToyClass &obj);
+    ToyClass &operator=(const ToyClass &obj);
+    friend ostream &operator<<(ostream &out, const ToyClass &obj);
+    friend istream &operator>>(istream &in, ToyClass &obj);
+    const char *getName();
+    float getPrice();
+    float getWeight();
+    void updateToy();
+    void setId(int id);
+    ~ToyClass()
     {
         delete[] name;
         delete[] category;
-        name = new char[strlen(_name) + 1];
-        strcpy(name, _name);
-        category = new char[strlen(_category) + 1];
-        strcpy(category, _category);
-        price = _price;
-        weight = _weight;
-        age = _age;
-    }
-
-    ToyClass(const ToyClass &obj)
-    {
-        delete[] name;
-        name = new char[strlen(obj.name) + 1];
-        strcpy(name, obj.name);
-        price = obj.price;
-        weight = obj.weight;
-    }
-
-    ToyClass &operator=(const ToyClass &obj)
-    {
-        delete[] name;
-        name = new char[strlen(obj.name) + 1];
-        strcpy(name, obj.name);
-        price = obj.price;
-        weight = obj.weight;
-        return *this;
-    };
-    friend ostream &operator<<(ostream &os, const ToyClass &obj)
-    {
-        os << obj.name << obj.weight << endl
-           << endl;
-        return os;
-    };
-
-    const char *getName()
-    {
-        return name;
-    }
-    float getPrice()
-    {
-        return price;
-    }
-    float getWeight()
-    {
-        return weight;
-    }
-    const void afisare()
-        const
-    {
-
-        cout << "Numele jucariei este: " << name << " cu pretul de " << price << " si greutate de " << weight << endl;
-    }
-    ~ToyClass()
-    {
-
-        delete[] name;
     }
 };
 #endif
