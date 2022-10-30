@@ -92,7 +92,7 @@ istream &operator>>(istream &in, Gift &obj)
 ostream &operator<<(ostream &out, Gift &obj)
 {
     out << endl
-        << "Numele cadoului este "
+        << " Id: " << obj.id << ". Numele cadoului este "
         << obj.name << " cu destinatia " << obj.destination << " pentru persoana " << obj.personName;
     out << endl;
     for (int i = 0; i < obj.toysLength; i++)

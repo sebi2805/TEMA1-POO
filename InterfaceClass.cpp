@@ -7,7 +7,7 @@ void InterfaceMenu::start()
     cout << "*******************************************CONFIGURARE CADOU*******************************************" << endl;
     do
     {
-        cout << "1.Start configurare cadou\n2.Printare cadou\n3.Adaugare cadou nou\n4.Stergere cadou\n5.Modificare cadou existent\n6.Afisare informatii generale\n7.Clear\n0.Exit\n";
+        cout << "1.Start configurare cadou\n2.Printare cadou\n3.Adaugare cadou nou\n4.Stergere cadou\n5.Modificare cadou existent\n6.Afisare informatii generale\n7.Printare toate cadourile\n8.Clear\n0.Exit\n";
         cin >> i;
         switch (i)
         {
@@ -87,6 +87,15 @@ void InterfaceMenu::start()
             break;
         }
         case 7:
+        {
+            for (int i = 0; i < numberOfGifts; i++)
+            {
+                cout << allGifts[i];
+                cout << endl;
+            }
+            break;
+        }
+        case 8:
         {
             system("clear");
             break;

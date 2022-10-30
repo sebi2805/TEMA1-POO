@@ -47,7 +47,7 @@ ToyClass &ToyClass::operator=(const ToyClass &obj)
 };
 ostream &operator<<(ostream &out, const ToyClass &obj)
 {
-    out << obj.id << ".Numele jucariei este: " << obj.name << " cu pretul de " << obj.price << " si greutate de " << obj.weight << endl;
+    out << "    Id: " << obj.id << ". Numele jucariei este: " << obj.name << " cu pretul de " << obj.price << " si greutate de " << obj.weight << endl;
     return out;
 };
 istream &operator>>(istream &in, ToyClass &obj)
@@ -126,6 +126,6 @@ void ToyClass::updateToy()
 }
 void ToyClass::setId(int _id)
 {
-    cout << "setter id" << _id << endl;
+
     id = _id;
 }
