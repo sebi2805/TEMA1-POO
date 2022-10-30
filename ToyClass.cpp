@@ -45,6 +45,17 @@ ToyClass &ToyClass::operator=(const ToyClass &obj)
     id = obj.id;
     return *this;
 };
+bool operator==(const ToyClass &lhs, const ToyClass &rhs)
+{
+    bool res = (lhs.age == rhs.age) && lhs.price == rhs.price && lhs.weight == rhs.weight && (!strcmp(lhs.name, rhs.name)) && (!strcmp(lhs.category, rhs.category));
+    return res;
+};
+bool operator!=(const ToyClass &lhs, const ToyClass &rhs)
+
+{
+    bool res = !(lhs.age == rhs.age) && lhs.price == rhs.price && lhs.weight == rhs.weight && (!strcmp(lhs.name, rhs.name)) && (!strcmp(lhs.category, rhs.category));
+    return res;
+};
 ostream &operator<<(ostream &out, const ToyClass &obj)
 {
     out << "    Id: " << obj.id << ". Numele jucariei este: " << obj.name << " cu pretul de " << obj.price << " si greutate de " << obj.weight << endl;
@@ -77,6 +88,39 @@ float ToyClass::getWeight()
 {
     return weight;
 }
+int ToyClass::getAge()
+{
+    return age;
+};
+const char *ToyClass::getName()
+{
+    return name;
+};
+const char *ToyClass::getCategory()
+{
+    return category;
+};
+void ToyClass::setName(const char *_name)
+{
+    delete[] name;
+    name = new char[strlen(_name) + 1];
+    strcpy(name, _name);
+};
+void ToyClass::setCategory(const char *_category)
+{
+    delete[] category;
+    category = new char[strlen(_category) + 1];
+    strcpy(category, _category);
+};
+void ToyClass::setPrice(float _price)
+{
+    price = _price;
+};
+void ToyClass::setWeight(float _weight)
+{
+    weight = _weight;
+};
+int ToyClass::setAge(float _age) { age = _age; };
 void ToyClass::updateToy()
 {
     int j;

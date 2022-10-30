@@ -11,6 +11,12 @@ void InterfaceMenu::start()
         cin >> i;
         switch (i)
         {
+        case 9:
+        {
+            const bool x = (allGifts[0] == allGifts[1]);
+
+            cout << x;
+        }
         case 0:
             cout << "Iesire interfata";
             break;

@@ -8,7 +8,8 @@ class ToyClass
 {
 private:
     char *name = new char[1], *category = new char[1];
-    float price, weight, age;
+    float price, weight;
+    int age;
     int id;
 
 public:
@@ -17,9 +18,19 @@ public:
     ToyClass &operator=(const ToyClass &obj);
     friend ostream &operator<<(ostream &out, const ToyClass &obj);
     friend istream &operator>>(istream &in, ToyClass &obj);
+    friend bool operator==(const ToyClass &lhs, const ToyClass &rhs);
+    friend bool operator!=(const ToyClass &lhs, const ToyClass &rhs);
     const char *getName();
     float getPrice();
     float getWeight();
+    int getAge();
+    const char *getName();
+    const char *getCategory();
+    void setName(const char *_name);
+    void setCategory(const char *category);
+    void setPrice(float _price);
+    void setWeight(float _weight);
+    int setAge(float _age);
     void updateToy();
     void setId(int id);
     ~ToyClass()

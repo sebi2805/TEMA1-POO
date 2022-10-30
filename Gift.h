@@ -19,8 +19,10 @@ public:
     Gift &operator=(const Gift &obj);
     friend istream &operator>>(istream &in, Gift &obj);
     friend ostream &operator<<(ostream &out, Gift &obj);
+    friend bool operator==(const Gift &lhs, const Gift &rhs);
     const char *getName();
     const char *getDestination();
+    const char *getPersonName();
     const ToyClass *getToys();
     int getToysLength();
     void setName(const char *_name);

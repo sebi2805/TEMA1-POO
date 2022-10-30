@@ -100,6 +100,20 @@ ostream &operator<<(ostream &out, Gift &obj)
     out << endl;
     return out;
 }
+bool operator==(const Gift &lhs, const Gift &rhs)
+{
+
+    bool res = !strcmp(lhs.destination, rhs.destination) && !strcmp(lhs.name, rhs.name) && !strcmp(lhs.personName, rhs.personName);
+    if (lhs.toysLength != rhs.toysLength)
+        return false;
+    for (int i = 0; i < lhs.toysLength; i++)
+    {
+        cout << i;
+        if (lhs.toys[i] == rhs.toys[i])
+            return false;
+    }
+    return res;
+}
 
 int Gift::getToysLength()
 {
@@ -117,6 +131,10 @@ const char *Gift::getDestination()
 {
     return destination;
 }
+const char *Gift::getPersonName()
+{
+    return personName;
+};
 void Gift::setName(const char *_name)
 {
     delete[] name;
