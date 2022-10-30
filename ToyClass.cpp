@@ -115,7 +115,7 @@ void ToyClass::updateToy()
         }
         case 5:
         {
-            cout << "Introduceti noua varsta a jucariei\n";
+            cout << "Introduceti noua varsta jucariei\n";
             cin >> age;
             break;
         }
