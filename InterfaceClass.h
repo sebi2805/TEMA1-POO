@@ -12,5 +12,9 @@ private:
 public:
     InterfaceMenu(){};
     void start();
+    ~InterfaceMenu()
+    {
+        delete[] allGifts;
+    }
 };
 #endif
