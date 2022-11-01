@@ -119,19 +119,19 @@ int Gift::getToysLength()
 {
     return toysLength;
 }
-const ToyClass *Gift::getToys()
+ToyClass *Gift::getToys() const
 {
     return toys;
 }
-const char *Gift::getName()
+char *Gift::getName() const
 {
     return name;
 }
-const char *Gift::getDestination()
+char *Gift::getDestination() const
 {
     return destination;
 }
-const char *Gift::getPersonName()
+char *Gift::getPersonName() const
 {
     return personName;
 };

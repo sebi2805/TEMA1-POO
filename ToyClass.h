@@ -20,12 +20,11 @@ public:
     friend istream &operator>>(istream &in, ToyClass &obj);
     friend bool operator==(const ToyClass &lhs, const ToyClass &rhs);
     friend bool operator!=(const ToyClass &lhs, const ToyClass &rhs);
-    const char *getName();
     float getPrice();
     float getWeight();
     int getAge();
-    const char *getName();
-    const char *getCategory();
+    char *getName() const;
+    char *getCategory() const;
     void setName(const char *_name);
     void setCategory(const char *category);
     void setPrice(float _price);

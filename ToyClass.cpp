@@ -76,7 +76,7 @@ istream &operator>>(istream &in, ToyClass &obj)
     cin >> obj.age;
     return in;
 }
-const char *ToyClass::getName()
+char *ToyClass::getName() const
 {
     return name;
 };
@@ -92,11 +92,8 @@ int ToyClass::getAge()
 {
     return age;
 };
-const char *ToyClass::getName()
-{
-    return name;
-};
-const char *ToyClass::getCategory()
+
+char *ToyClass::getCategory() const
 {
     return category;
 };
