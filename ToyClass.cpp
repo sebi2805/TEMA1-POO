@@ -117,7 +117,7 @@ void ToyClass::setWeight(float _weight)
 {
     weight = _weight;
 };
-int ToyClass::setAge(float _age) { age = _age; };
+void ToyClass::setAge(float _age) { age = _age; };
 void ToyClass::updateToy()
 {
     int j;

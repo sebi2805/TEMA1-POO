@@ -29,7 +29,7 @@ public:
     void setCategory(const char *category);
     void setPrice(float _price);
     void setWeight(float _weight);
-    int setAge(float _age);
+    void setAge(float _age);
     void updateToy();
     void setId(int id);
     ~ToyClass()
