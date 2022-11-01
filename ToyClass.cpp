@@ -54,7 +54,7 @@ bool operator!=(const ToyClass &lhs, const ToyClass &rhs)
 
 {
     bool res = !(lhs.age == rhs.age) && lhs.price == rhs.price && lhs.weight == rhs.weight && (!strcmp(lhs.name, rhs.name)) && (!strcmp(lhs.category, rhs.category));
-    return res;
+    return res; // !(*this == rhs)
 };
 ostream &operator<<(ostream &out, const ToyClass &obj)
 {
@@ -63,6 +63,7 @@ ostream &operator<<(ostream &out, const ToyClass &obj)
 };
 istream &operator>>(istream &in, ToyClass &obj)
 {
+    cout << "Introduceti noul nume" << endl;
     cin.ignore();
     cin.getline(obj.name, 50);
     cout << "Introduceti pretul jucariei.\n";
